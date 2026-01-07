@@ -14,4 +14,3 @@ python-jose[cryptography]
 passlib[bcrypt]
 bcrypt
 httpx
-gradio
