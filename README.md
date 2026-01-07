@@ -1,3 +1,14 @@
+---
+title: Study Assistant
+emoji: 🍵
+colorFrom: green
+colorTo: brown
+sdk: gradio
+sdk_version: 5.0.0
+app_file: app.py
+pinned: false
+---
+
 # 🎓 AI Student Study Assistant
 
 A powerful, aesthetic, and privacy-focused study companion built with **FastAPI**, **LangChain**, and **Groq**.
