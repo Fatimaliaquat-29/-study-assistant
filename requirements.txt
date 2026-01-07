@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+python-multipart
+langchain
+langchain-community
+langchain-text-splitters
+pypdf
+faiss-cpu
+langchain-huggingface
+sentence-transformers
+langchain-groq
+python-dotenv
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
+httpx

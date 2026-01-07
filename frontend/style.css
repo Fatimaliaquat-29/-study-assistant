@@ -1,0 +1,447 @@
+:root {
+    /* "Matcha Latte" Palette */
+    --bg-paper: #fdfcf8;
+    /* Warm White */
+    --grid-color: #d7ccc8;
+    /* Soft Brown Grid */
+
+    --text-primary: #4a3b32;
+    /* Espresso */
+    --text-code: #8d6e63;
+    /* Light Brown */
+
+    /* Pill Colors - Updated as requested */
+    --pill-blue: #9caf88;
+    /* Sage Green (replaces Blue) */
+    --pill-orange: #ffcdd2;
+    /* Baby Pink (replaces Orange) */
+    --pill-green: #556b2f;
+    /* Matcha / Deep Sage */
+    --pill-yellow: #d7ccc8;
+    /* Latte Brown (replaces Yellow) */
+
+    --border-radius: 50px;
+    --card-radius: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier Prime', monospace;
+    background-color: var(--bg-paper);
+    /* Soft Brown Grid Pattern */
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Fredoka', sans-serif;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+}
+
+/* Auth Pages */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    backdrop-filter: blur(5px);
+}
+
+.auth-card {
+    background: #FFF;
+    padding: 3rem;
+    border-radius: 30px;
+    border: 2px solid var(--text-primary);
+    box-shadow: 8px 8px 0 var(--pill-blue);
+    /* Sage Shadow */
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.auth-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--text-primary);
+    border-radius: var(--border-radius);
+    background: #FFF;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s;
+    color: var(--text-primary);
+}
+
+.form-group input:focus {
+    border-color: var(--pill-green);
+    box-shadow: 0 0 0 4px rgba(85, 107, 47, 0.2);
+}
+
+/* Layout */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 320px;
+    background: #fff;
+    border-right: 2px solid var(--text-primary);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-shrink: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.brand {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.brand h1 {
+    font-size: 2.2rem;
+    white-space: nowrap;
+}
+
+.brand p {
+    background: var(--pill-orange);
+    /* Baby Pink Badge */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: inline-block;
+    border: 2px solid var(--text-primary);
+    margin-top: 5px;
+}
+
+.nav-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nav-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: #FFF;
+    border: 2px solid var(--text-primary);
+    color: var(--text-primary);
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.nav-btn:hover {
+    transform: translateX(5px);
+    box-shadow: 5px 5px 0 var(--text-primary);
+    background: var(--pill-yellow);
+    /* Latte Hover */
+    color: var(--text-primary);
+}
+
+.nav-btn.active {
+    background: var(--pill-blue);
+    /* Sage Active */
+    color: white;
+    box-shadow: 5px 5px 0 var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+/* Upload Section */
+.file-drop-area {
+    background: #FAFAFA;
+    border: 2px dashed var(--pill-green);
+    border-radius: var(--card-radius);
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-primary);
+}
+
+.file-drop-area:hover {
+    background: #F1F8E9;
+    /* Pale Green */
+    border-style: solid;
+}
+
+input[type="file"] {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Action Buttons */
+.primary-btn {
+    background: var(--pill-orange);
+    /* Baby Pink Button */
+    color: var(--text-primary);
+    border: 2px solid var(--text-primary);
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+    box-shadow: 4px 4px 0 var(--text-primary);
+    transition: all 0.2s;
+}
+
+.primary-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--text-primary);
+    background: #ffc1e3;
+}
+
+.danger-btn {
+    background: #FFF;
+    border: 2px solid var(--text-primary);
+    color: #e57373;
+    padding: 0.7rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.danger-btn:hover {
+    background: #ffebee;
+}
+
+/* Main Content */
+.views-container {
+    flex: 1;
+    margin-left: 320px;
+    padding: 3rem;
+    min-height: 100vh;
+}
+
+.view-section {
+    display: none;
+}
+
+.view-section.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-interface {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 120px;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.message {
+    display: flex;
+    align-items: flex-end;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message .bubble {
+    max-width: 75%;
+    padding: 1.5rem;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    position: relative;
+    border: 2px solid var(--text-primary);
+    box-shadow: 4px 4px 0 rgba(74, 59, 50, 0.1);
+}
+
+.message.user .bubble {
+    background: var(--pill-blue);
+    /* Sage User Bubble */
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.message.bot .bubble {
+    background: #FFF;
+    color: var(--text-primary);
+    border-bottom-left-radius: 4px;
+    font-family: 'Courier Prime', monospace;
+}
+
+/* Input Area */
+.input-area {
+    position: fixed;
+    bottom: 3rem;
+    left: calc(320px + 3rem);
+    right: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 90;
+}
+
+#chat-form {
+    background: #FFF;
+    border: 3px solid var(--text-primary);
+    border-radius: 50px;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 6px 6px 0 rgba(74, 59, 50, 0.1);
+}
+
+#user-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+#user-input:focus {
+    outline: none;
+}
+
+#send-btn {
+    background: var(--pill-orange);
+    /* Pink Send */
+    border: 2px solid var(--text-primary);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    box-shadow: 2px 2px 0 var(--text-primary);
+}
+
+#send-btn:hover {
+    transform: scale(1.1);
+    background: #ffab91;
+}
+
+/* Analysis */
+.analysis-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.analysis-card {
+    background: #FFF;
+    border: 3px solid var(--text-primary);
+    border-radius: 30px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 8px 8px 0 var(--pill-green);
+    /* Matcha Shadow */
+}
+
+textarea#analysis-input {
+    width: 100%;
+    height: 200px;
+    background: #fdfdfd;
+    background-image: linear-gradient(#e0e0e0 1px, transparent 1px);
+    background-size: 100% 30px;
+    line-height: 30px;
+    border: 2px solid var(--text-primary);
+    border-radius: 15px;
+    padding: 0 1rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    resize: vertical;
+    outline: none;
+}
+
+.score-badge {
+    display: inline-block;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 2.5rem;
+    padding: 0.5rem 2rem;
+    background: #FFF;
+    border: 3px solid var(--text-primary);
+    border-radius: 50px;
+    margin-right: 1.5rem;
+    box-shadow: 5px 5px 0 var(--pill-yellow);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 3px solid var(--text-primary);
+    }
+
+    .views-container {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+
+    .input-area {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+}

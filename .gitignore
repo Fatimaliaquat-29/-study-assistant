@@ -1,0 +1,25 @@
+# Environment Variables
+.env
+
+# Virtual Environment
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Database
+*.db
+*.sqlite3
+
+# Vector Store (Local RAG data)
+faiss_index_local/
+
+# Debug logs
+*.log
+debug_output.txt
+verify_output.txt
+
+# VS Code
+.vscode/

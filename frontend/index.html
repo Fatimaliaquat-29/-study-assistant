@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h1>Study Assistant</h1>
+                <p>Protected Workspace</p>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav-tabs">
+                <button class="nav-btn active" data-target="view-chat">💬 Study Chat</button>
+                <button class="nav-btn" data-target="view-tools">🛠️ Analysis Tools</button>
+            </nav>
+
+            <!-- Chat Specific Controls -->
+            <div id="file-controls" class="upload-section">
+                <h3>Upload Material</h3>
+                <div class="file-drop-area" id="drop-area">
+                    <span class="icon">📂</span>
+                    <span class="file-msg">Drag & Drop or Click</span>
+                    <input type="file" id="fileElem" multiple accept=".pdf,.txt">
+                </div>
+                <div id="file-list" class="file-list"></div>
+                <button id="upload-btn" class="primary-btn" disabled>Upload Files</button>
+            </div>
+
+            <div class="actions">
+                <button id="logout-btn" class="danger-btn" style="margin-top: 1rem;">Log Out</button>
+            </div>
+        </aside>
+
+        <!-- Main Views -->
+        <main class="views-container">
+
+            <!-- View 1: Chat -->
+            <div id="view-chat" class="view-section active">
+                <div class="chat-interface">
+                    <div id="chat-messages" class="chat-messages">
+                        <div class="message system">
+                            <div class="bubble">
+                                Hello! Upload some notes and ask me anything based on them!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-area">
+                        <form id="chat-form">
+                            <input type="text" id="user-input" placeholder="Ask a question..." autocomplete="off">
+                            <button type="submit" id="send-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View 2: Analysis -->
+            <div id="view-tools" class="view-section">
+                <div class="analysis-container">
+                    <div class="brand" style="margin-bottom: 2rem;">
+                        <h2>📝 Text Analysis</h2>
+                        <p>Check for grammar errors and AI-generated content patterns.</p>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>Input Text</h3>
+                        <textarea id="analysis-input"
+                            placeholder="Paste your essay or text here to analyze..."></textarea>
+                        <button id="analyze-btn" class="primary-btn">Analyze Text</button>
+                    </div>
+
+                    <div id="analysis-result">
+                        <!-- Results render here -->
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
