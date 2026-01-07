@@ -103,17 +103,29 @@ def create_rag_chain():
 # Attempt initialization
 initialize_rag()
 
-async def ingest_document(file: UploadFile):
+# Modified for Gradio Compatibility
+async def ingest_document(file_input):
     global vectorstore, embedding_function
     if not vectorstore:
         initialize_rag()
     
-    # Clean filename
-    clean_name = os.path.basename(file.filename)
+    # Handle Gradio file input (which is usually a temp file path)
+    if hasattr(file_input, 'filename'): # FastAPI UploadFile
+        clean_name = os.path.basename(file_input.filename)
+        source_path = file_input.file
+    else: # Gradio (string path)
+        clean_name = os.path.basename(file_input)
+        source_path = file_input
+        
     temp_filename = f"temp_{uuid4()}_{clean_name}"
     
-    with open(temp_filename, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
+    # Copy to temp file
+    if hasattr(file_input, 'filename'):
+        with open(temp_filename, "wb") as buffer:
+            shutil.copyfileobj(source_path, buffer)
+    else:
+        shutil.copy(source_path, temp_filename)
+    
     
     try:
         if temp_filename.endswith(".pdf"):
