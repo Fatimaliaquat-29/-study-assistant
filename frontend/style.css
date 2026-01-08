@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
     /* "Coursue" Theme Palette */
@@ -20,12 +20,12 @@
     /* Soft grey text */
 
     /* UI Tokens */
-    --radius-card: 20px;
-    --radius-btn: 12px;
+    --radius-card: 24px;
+    --radius-btn: 16px;
     --shadow-soft: 0px 10px 40px rgba(29, 22, 23, 0.07);
     --shadow-hover: 0px 10px 40px rgba(108, 93, 211, 0.2);
 
-    --sidebar-width: 250px;
+    --sidebar-width: 280px;
 }
 
 * {
@@ -35,7 +35,8 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Outfit', sans-serif;
+    /* Nicer, premium font */
     color: var(--text-main);
     background: var(--bg-body);
     height: 100vh;
@@ -62,16 +63,21 @@ body {
     flex-direction: column;
     border-right: 1px solid rgba(0, 0, 0, 0.03);
     z-index: 100;
-    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
+    overflow-y: auto;
+    /* Allow scrolling for small screens */
+    height: 100vh;
     /* Sidebar separation shadow */
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
 }
 
 .brand {
     display: flex;
+    flex-direction: row;
+    /* FORCE ROW */
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     margin-bottom: 40px;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 .logo-icon {
@@ -103,7 +109,7 @@ body {
 .nav-tabs {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     /* Spaced out slightly more */
     flex: 1;
 }
@@ -111,36 +117,37 @@ body {
 .nav-btn {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 16px 20px;
+    gap: 16px;
+    padding: 18px 24px;
     /* Chunkier buttons */
-    border-radius: 16px;
-    background: transparent;
-    border: 1px solid transparent;
+    border-radius: 20px;
+    background: white;
+    border: 2px solid #F1F1F5;
     color: var(--text-body);
     font-family: inherit;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
 
 .nav-btn i {
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .nav-btn:hover {
     color: var(--primary);
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    transform: translateY(-1px);
+    border-color: var(--primary);
+    box-shadow: 0 8px 20px rgba(108, 93, 211, 0.15);
+    transform: translateY(-2px);
 }
 
 .nav-btn.active {
     /* Vibrant Gradient Active State */
     background: linear-gradient(135deg, var(--primary) 0%, #8E7CFF 100%);
     color: white;
-    box-shadow: 0 8px 20px rgba(108, 93, 211, 0.35);
+    box-shadow: 0 10px 25px rgba(108, 93, 211, 0.4);
     /* Colorful glow */
     border-color: transparent;
 }
@@ -243,43 +250,50 @@ body {
 .upload-action-btn {
     width: 100%;
     /* Full width button */
-    padding: 12px;
+    padding: 14px;
     height: auto;
-    border-radius: 12px;
+    border-radius: 16px;
     background: var(--primary);
     color: white;
-    border: none;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    /* Subtle border */
     position: static;
-    /* No longer absolute */
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    box-shadow: 0 4px 10px rgba(108, 93, 211, 0.3);
-    transition: transform 0.2s;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 8px 16px rgba(108, 93, 211, 0.25);
+    transition: all 0.2s;
 }
 
-.upload-action-btn::after {
-    content: "Upload Files";
-    /* Add text label */
+.upload-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(108, 93, 211, 0.35);
 }
 
 /* Logout */
 .actions {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 1px solid #F0F0F0;
+    border-top: 2px solid #F0F0F0;
+    /* Thicker border */
 }
 
 .logout {
-    color: var(--text-body);
+    color: #FF754C;
+    /* Coral Red for visibility */
+    background: rgba(255, 117, 76, 0.1);
+    border: 1px solid rgba(255, 117, 76, 0.2);
+    margin-bottom: 20px;
 }
 
 .logout:hover {
-    color: #FF754C;
+    background: #FF754C;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 117, 76, 0.3);
 }
 
 /* Coral Red for logout */

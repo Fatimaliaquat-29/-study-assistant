@@ -186,7 +186,7 @@ if (!isAuthPage) {
         uploadBtn.disabled = true;
 
         // Confirmation Message
-        appendMessage('system', 'Old memory wiped! 🧠✨');
+        appendMessage('system', 'Old memory wiped.');
         appendMessage('system', 'New file ready for questions.');
     });
 
