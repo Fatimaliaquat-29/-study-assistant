@@ -1,5 +1,3 @@
-
-
 # 🎓 AI Student Study Assistant
 
 A powerful, aesthetic, and privacy-focused study companion built with **FastAPI**, **LangChain**, and **Groq**.
