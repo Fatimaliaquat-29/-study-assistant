@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Assistant</title>
-    <link rel="stylesheet" href="/static/style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap"
+    <link rel="stylesheet" href="/static/style.css?v=6">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body>
@@ -16,30 +16,46 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="brand">
-                <h1>Study Assistant</h1>
-                <p>Protected Workspace</p>
+                <div class="logo-icon"><i class="ph-fill ph-student"></i></div>
+                <div class="brand-text">
+                    <h1>Study Assistant</h1>
+                    <p>Protected Workspace</p>
+                </div>
             </div>
 
             <!-- Navigation -->
             <nav class="nav-tabs">
-                <button class="nav-btn active" data-target="view-chat">💬 Study Chat</button>
-                <button class="nav-btn" data-target="view-tools">🛠️ Analysis Tools</button>
+                <button class="nav-btn active" data-target="view-chat">
+                    <i class="ph ph-chat-circle-text"></i>
+                    <span>Study Chat</span>
+                </button>
+                <button class="nav-btn" data-target="view-tools">
+                    <i class="ph ph-wrench"></i>
+                    <span>Analysis Tools</span>
+                </button>
             </nav>
 
-            <!-- Chat Specific Controls -->
-            <div id="file-controls" class="upload-section">
-                <h3>Upload Material</h3>
+            <!-- Chat Specific Controls (Widget Style) -->
+            <div id="file-controls" class="upload-widget">
+                <div class="widget-header">
+                    <h3>Upload Notes</h3>
+                </div>
                 <div class="file-drop-area" id="drop-area">
-                    <span class="icon">📂</span>
-                    <span class="file-msg">Drag & Drop or Click</span>
+                    <i class="ph ph-upload-simple"></i>
+                    <span class="file-msg">Click or Drag PDF</span>
                     <input type="file" id="fileElem" multiple accept=".pdf,.txt">
                 </div>
                 <div id="file-list" class="file-list"></div>
-                <button id="upload-btn" class="primary-btn" disabled>Upload Files</button>
+                <button id="upload-btn" class="upload-action-btn" disabled>
+                    <i class="ph-bold ph-arrow-right"></i>
+                </button>
             </div>
 
             <div class="actions">
-                <button id="logout-btn" class="danger-btn" style="margin-top: 1rem;">Log Out</button>
+                <button id="logout-btn" class="nav-btn logout">
+                    <i class="ph ph-sign-out"></i>
+                    <span>Log Out</span>
+                </button>
             </div>
         </aside>
 
@@ -75,25 +91,34 @@
             <!-- View 2: Analysis -->
             <div id="view-tools" class="view-section">
                 <div class="analysis-container">
-                    <div class="brand" style="margin-bottom: 2rem;">
-                        <h2>📝 Text Analysis</h2>
-                        <p>Check for grammar errors and AI-generated content patterns.</p>
+                    <div class="analysis-header">
+                        <h2>Text Analysis</h2>
+                        <div class="header-actions">
+                            <span class="status-badge">Ready to Check</span>
+                        </div>
                     </div>
 
-                    <div class="analysis-card">
-                        <h3>Input Text</h3>
+                    <div class="editor-area">
                         <textarea id="analysis-input"
-                            placeholder="Paste your essay or text here to analyze..."></textarea>
-                        <button id="analyze-btn" class="primary-btn">Analyze Text</button>
+                            placeholder="Type or paste your text here to check for AI patterns and grammar..."></textarea>
                     </div>
 
-                    <div id="analysis-result">
-                        <!-- Results render here -->
+                    <div class="editor-toolbar">
+                        <button id="analyze-btn" class="primary-btn">
+                            <i class="ph-bold ph-magic-wand"></i> Run Analysis
+                        </button>
                     </div>
+
+                    <div id="analysis-result"></div>
+                </div>
+
+                <div id="analysis-result">
+                    <!-- Results render here -->
                 </div>
             </div>
+    </div>
 
-        </main>
+    </main>
     </div>
     <script src="/static/script.js"></script>
 </body>
