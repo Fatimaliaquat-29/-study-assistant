@@ -15,7 +15,6 @@ A powerful, aesthetic, and privacy-focused study companion built with **FastAPI*
 -   **📝 Analysis Tools**:
     -   **Grammar Checker**: Fixes essays instantly.
     -   **AI Detector**: Estimates if text was written by AI.
--   **🎨 Aesthetic UI**: "Matcha Latte" & "Scrapbook" theme with a fully responsive design.
 -   **🔒 Secure Auth**: User registration and login protected by JWT.
 
 ## 🛠️ Tech Stack
