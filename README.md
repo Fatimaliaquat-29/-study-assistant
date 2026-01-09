@@ -77,7 +77,7 @@ A powerful, aesthetic, and privacy-focused study companion built with **FastAPI*
 │   └── auth.py       # Authentication Handles
 ├── frontend/
 │   ├── index.html    # Main Dashboard
-│   ├── style.css     # "Matcha Latte" Theme
+│   ├── style.css   
 │   └── script.js     # Frontend Logic
 └── requirements.txt  # Python Dependencies
 ```
